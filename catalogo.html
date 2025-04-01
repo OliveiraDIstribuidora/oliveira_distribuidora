@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Catálogo - Oliveira Distribuidora</title>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="index.html#sobre">Sobre Nós</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="container">
+            <h2>Nosso Catálogo</h2>
+            <div class="produto">
+                <img src="/src/assets/bucha.jpg" alt="Bucha Traseira" width="100%">
+                <h3>Buchas Traseira</h3>
+                <p>Buchas de garfo traseiro</p>
+                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Buchas Traseira')">Pedir no WhatsApp</a>
+            </div>
+            <div class="produto">
+                <img src="/src/assets/biela-cg150.jpg" alt="Biela CG150" width="100%">
+                <h3>Biela CG 150</h3>
+                <p>Biela completa TXK CG150</p>
+                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Biela CG 150')">Pedir no WhatsApp</a>
+            </div>
+            <div class="produto">
+                <img src="/src/assets/cilindro-cg150.webp" alt="Cilindro CG150" width="100%">
+                <h3>Cilindro CG 150</h3>
+                <p>Cilindro de motor para CG 150</p>
+                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Cilindro CG 150')">Pedir no WhatsApp</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        
+    </footer>
+
+    <script>
+        function enviarWhatsApp(produto) {
+            let numero = "5585996728327";
+            let mensagem = `Olá, gostaria de saber mais sobre: *${produto}*.`;
+            let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
