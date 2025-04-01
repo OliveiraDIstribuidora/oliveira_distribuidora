@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300..700&display=swap');
 
 * {
     margin: 0;
@@ -7,28 +7,27 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #fceded;
 }
 
 header {
     background-image: url('/src/assets/logo-melhorada.png');
-    background-size: 28%;
+    background-size: 20%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100px;
+    height: 80px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.151);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    background-color: white;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
 }
 
@@ -38,42 +37,129 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: black;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff3b3b;
 }
 
 .container {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     text-align: center;
     margin-top: 40px;
-
-}
-
-.container h2, p {
-    margin: 10px;
 }
 
 .container h2 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
+    font-weight: 600;
 }
 
 .container p {
     font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 500;
-    font-style: normal;
 }
+
+.container-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.banner-principal {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 20px;
+}
+
+.banner-texto {
+    position: absolute;
+    bottom: -5.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(66, 66, 66, 0.6);
+    padding: 15px 25px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 100%;
+}
+
+.marcas-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    margin: 0 auto;
+}
+
+.textos-container {
+    max-width: 70%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.textos-container h2 {
+    font-size: 30px;
+    color: #ff0000;
+}
+
+.textos-container p {
+    margin: 20px;
+    font-size: 18px;
+}
+
+.marcas-slider {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
+
+.slide-track {
+    display: flex;
+    gap: 40px;
+    animation: slide 12s linear infinite;
+}
+
+.slide-track img {
+    width: 150px; /* Ajuste conforme necessário */
+    height: auto;
+    object-fit: contain;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 
 .produto {
     display: inline-block;
-    width: 20%;
-    margin: 10px;
+    width: 25%;
+    margin: 15px;
     padding: 15px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.226);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .botao-whatsapp {
@@ -84,15 +170,22 @@ nav ul li a {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.botao-whatsapp:hover {
+    background-color: #1da851;
 }
 
 #sobre, #contato {
     padding: 40px;
     border-radius: 5px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin: 20px auto;
 }
 
 .map {
     border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.438);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }

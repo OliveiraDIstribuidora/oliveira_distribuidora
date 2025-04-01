@@ -1,0 +1,38 @@
+📌 Páginas Essenciais
+🏠 Página Inicial
+
+Banner principal com destaque para promoções ou novidades.
+
+Breve apresentação da loja.
+
+Links para principais categorias de produtos.
+
+🛒 Catálogo de Produtos
+
+Listagem de produtos com imagens, descrições e botão "Pedir no WhatsApp".
+
+Filtros por categorias (Ex: Peças de motor, Acessórios, Pneus, etc.).
+
+🏍️ Sobre Nós
+
+História da Oliveira Distribuidora.
+
+Missão, visão e valores.
+
+Fotos da loja ou equipe.
+
+📞 Contato
+
+Endereço físico (com mapa do Google Maps).
+
+Telefone e WhatsApp.
+
+Redes sociais.
+
+Formulário para dúvidas ou orçamentos.
+
+⭐ Depoimentos (opcional)
+
+Avaliações de clientes.
+
+Fotos de clientes usando as peças compradas.
