@@ -56,7 +56,7 @@ nav ul li a:hover {
 }
 
 .banner-principal {
-    width: 80%;
+    width: 90%;
     height: 80vh;
     position: relative;
     overflow: hidden;
@@ -69,45 +69,6 @@ nav ul li a:hover {
     border-radius: 20px;
 }
 
-.banner-texto1 {
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    position: absolute;
-    top: 30%;
-    left: 85%;
-    transform: translate(-50%, -30%);
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: end;
-    padding: 15px 25px;
-    width: 30%;
-    height: 100%;
-    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.4));
-}
-
-
-.banner-texto1 span {
-    color: #CC0C0F;
-}
-
-.banner-texto {
-    position: absolute;
-    bottom: -5.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    background: rgba(66, 66, 66, 0.6);
-    padding: 15px 25px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    width: 100%;
-}
-
 .marcas-container {
     text-align: center;
     padding: 40px 20px;
@@ -116,7 +77,7 @@ nav ul li a:hover {
 }
 
 .textos-container {
-    max-width: 70%;
+    max-width: 60%;
     margin: 0 auto;
     margin-bottom: 30px;
 }
@@ -128,7 +89,7 @@ nav ul li a:hover {
 
 .textos-container p {
     margin: 20px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .marcas-slider {
