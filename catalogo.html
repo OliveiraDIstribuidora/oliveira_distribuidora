@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="src/assets/icon.png">
     <title>Catálogo - Oliveira Distribuidora</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="/src/assets/logo-sem_fundo.png" alt="">
+            <img src="src/assets/logo-sem_fundo.png" alt="">
         </div>
         <nav>
             <ul>
@@ -23,66 +24,97 @@
     
     <main>
         <section class="container">
-            <h2>Nosso Catálogo</h2>
-            <div class="produto categoria-titan 125 categoria-titan 150 categoria-titan 160 categoria-cargo 125 categoria-today categoria-cbx 200s">
-                <img src="/src/assets/peças/bucha.jpg" alt="Bucha Traseira" width="100%">
-                <h3>Buchas Traseira</h3>
-                <p>Buchas de garfo traseiro</p>
-                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Buchas Traseira')">Pedir no WhatsApp</a>
+            <h2>Nossos Produtos</h2>
+            <div class="produtos-container">
+                <div class="produto categoria-titan 125 categoria-titan 150 categoria-titan 160 categoria-cargo 125 categoria-today categoria-cbx 200s">
+                    <p class="preco-produto">R$20,00</p>
+                    <img src="src/assets/peças/bucha.jpg" alt="Bucha Traseira" width="100%">
+                    <h3>Buchas Traseira</h3>
+                    <p class="descricao-produto">Buchas de garfo traseiro</p>
+                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Buchas Traseira')">Pedir no WhatsApp</a>
+                </div>
+                <div class="produto categoria-cg 150">
+                    <p class="preco-produto">R$126,90</p>
+                    <img src="src/assets/peças/biela-cg150.jpg" alt="Biela CG150" width="100%">
+                    <h3>Biela CG 150</h3>
+                    <p class="descricao-produto">Biela completa TXK CG150</p>
+                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Biela CG 150')">Pedir no WhatsApp</a>
+                </div>
+                <div class="produto categoria-cg 150">
+                    <p class="preco-produto">R$164,90</p>
+                    <img src="src/assets/peças/cilindro-cg150.webp" alt="Cilindro CG150" width="100%">
+                    <h3>Cilindro CG 150</h3>
+                    <p class="descricao-produto">Cilindro de motor para CG 150</p>
+                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Cilindro CG 150')">Pedir no WhatsApp</a>
+                </div>
+                <div class="produto categoria-pop 100 categoria-cg 125 98 categoria-biz">
+                    <p class="preco-produto">R$17,00</p>
+                    <img src="src/assets/peças/bucha-pop.jpg" alt="Bucha para pop 100">
+                    <h3>Bucha Pop</h3>
+                    <p class="descricao-produto">Bucha de garfo para pop 100, CG125 etc..</p>
+                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Bucha pop 100')">Pedir no WhatsApp</a>
+                </div>
+                <div class="produto categoria-titan categoria-start categoria-cg categoria-fan">
+                    <p class="preco-produto">R$35,00</p>
+                    <img src="src/assets/peças/camara.jpg" alt="camara de ar para roda 18">
+                    <h3>Câmara de ar</h3>
+                    <p class="descricao-produto">câmara de ar para roda 18 polegadas</p>
+                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('câmara de ar')">Pedir no WhatsApp</a>
+                </div>
+                <div class="produto categoria-cg 160 categoria-xre 190 categoria-bros 160">
+                    <p class="preco-produto">R$62,00</p>
+                    <img src="src/assets/peças/comando.jpg" alt="Arvore comando ww3">
+                    <h3>Arvore comando</h3>
+                    <p class="descricao-produto">comando para BROS 160 / CG 160 / XRE 190</p>
+                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Comando WW3')">Pedir no WhatsApp</a>
+                </div>
+                <div class="produto categoria-cg 150">
+                    <p class="preco-produto">R$65,00</p>
+                    <img src="src/assets/peças/kit_transmissao.jpg" alt="Kit transmissão">
+                    <h3>Kit transmissão</h3>
+                    <p class="descricao-produto">Kit com pinhão, coroa e corrente</p>
+                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Kit transmissão CG 150')">Pedir no WhatsApp</a>
+                </div>
+                <div class="produto categoria-lub">
+                    <p class="preco-produto">R$15,00</p>
+                    <img src="src/assets/peças/lubrificante_corrente.jpg" alt="Lubrificante de corrente">
+                    <h3>Lubrificante de corrente</h3>
+                    <p class="descricao-produto">Lubrificante de correntes - TecPro</p>
+                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Lubrificante de corrente')">Pedir no WhatsApp</a>
+                </div>
+                <div class="produto categoria-fazer 150 250 categoria-cg 150 160 categoria-xre 190 categoria-cb 300">
+                    <p class="preco-produto">R$150,00</p>
+                    <img src="src/assets/peças/pneu_kenda.webp" alt="Pneu kenda">
+                    <h3>Pneu traseiro Kenda</h3>
+                    <p class="descricao-produto">Pneu traseiro para motos com aro 18</p>
+                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Pneu traseiro Kenda')">Pedir no WhatsApp</a>
+                </div>
             </div>
-            <div class="produto categoria-cg 150">
-                <img src="/src/assets/peças/biela-cg150.jpg" alt="Biela CG150" width="100%">
-                <h3>Biela CG 150</h3>
-                <p>Biela completa TXK CG150</p>
-                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Biela CG 150')">Pedir no WhatsApp</a>
-            </div>
-            <div class="produto categoria-cg 150">
-                <img src="/src/assets/peças/cilindro-cg150.webp" alt="Cilindro CG150" width="100%">
-                <h3>Cilindro CG 150</h3>
-                <p>Cilindro de motor para CG 150</p>
-                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Cilindro CG 150')">Pedir no WhatsApp</a>
-            </div>
-            <div class="produto categoria-pop 100 categoria-cg 125 98 categoria-biz">
-                <img src="/src/assets/peças/bucha-pop.jpg" alt="Bucha para pop 100">
-                <h3>Bucha Pop</h3>
-                <p>Bucha de garfo para pop 100, CG125 etc..</p>
-                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Bucha pop 100')">Pedir no WhatsApp</a>
-            </div>
-            <div class="produto categoria-titan categoria-start categoria-cg categoria-fan">
-                <img src="/src/assets/peças/camara.jpg" alt="camara de ar para roda 18">
-                <h3>Câmara de ar</h3>
-                <p>câmara de ar para roda 18 polegadas</p>
-                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('câmara de ar')">Pedir no WhatsApp</a>
-            </div>
-            <div class="produto categoria-cg 160 categoria-xre 190 categoria-bros 160">
-                <img src="src/assets/peças/comando.jpg" alt="Arvore comando ww3">
-                <h3>Arvore comando</h3>
-                <p>comando para BROS 160 / CG 160 / XRE 190</p>
-                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Comando WW3')">Pedir no WhatsApp</a>
-            </div>
-            <div class="produto categoria-cg 150">
-                <img src="/src/assets/peças/kit_transmissao.jpg" alt="Kit transmissão">
-                <h3>Kit transmissão</h3>
-                <p>Kit com pinhão, coroa e corrente</p>
-                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Kit transmissão CG 150')">Pedir no WhatsApp</a>
-            </div>
-            <div class="produto">
-                <img src="src/assets/peças/lubrificante_corrente.jpg" alt="Lubrificante de corrente">
-                <h3>Lubrificante de corrente</h3>
-                <p>Lubrificante de correntes - TecPro</p>
-                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Lubrificante de corrente')">Pedir no WhatsApp</a>
-            </div>
-            <div class="produto categoria-fazer 150 250 categoria-cg 150 160 categoria-xre 190 categoria-cb 300">
-                <img src="src/assets/peças/pneu_kenda.webp" alt="Pneu kenda">
-                <h3>Pneu traseiro Kenda</h3>
-                <p>Pneu traseiro para motos com aro 18</p>
-                <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Pneu traseiro Kenda')">Pedir no WhatsApp</a>
-            </div>
+            
         </section>
     </main>
     
     <footer>
-        
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2025 Oliveira Distribuidora - Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/oliveira_distribuidora1" target="_blank"><img src="src/assets/icons/instagram.svg" alt="Instagram" class="icon-social"></a>
+                <a href="https://www.facebook.com/oliveira_distribuidora1" target="_blank"><img src="src/assets/icons/facebook.svg" alt="Facebook" class="icon-social"></a>
+                <a href="https://wa.me//5585996728327" target="_blank"><img src="src/assets/icons/whatsapp.svg" alt="WhatsApp" class="icon-social"></a>
+                <a href="mailto:motosnet-adm@gmail.com"><img src="src/assets/icons/envelope-at.svg" alt="Email" class="icon-social"></a>
+            </div>
+        </div>
     </footer>
 
     <script>
