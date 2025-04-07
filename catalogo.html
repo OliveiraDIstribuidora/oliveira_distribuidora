@@ -8,18 +8,23 @@
     <title>Catálogo - Oliveira Distribuidora</title>
 </head>
 <body>
-    <header>
+    <header class="header-container">
         <div class="logo">
-            <img src="src/assets/logo-sem_fundo.png" alt="">
+            <img src="src/assets/logo-sem_fundo.png" alt="Logo Oliveira Distribuidora">
         </div>
         <nav>
-            <ul>
+            <ul id="nav-list">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="catalogo.html">Catalogo</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Sobre</a></li>
             </ul>
         </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
     
     <main>
@@ -27,7 +32,6 @@
             <h2>Nossos Produtos</h2>
             <div class="produtos-container">
                 <div class="produto categoria-titan 125 categoria-titan 150 categoria-titan 160 categoria-cargo 125 categoria-today categoria-cbx 200s">
-                    <p class="preco-produto">R$20,00</p>
                     <img src="src/assets/peças/bucha.jpg" alt="Bucha Traseira" width="100%">
                     <h3>Buchas Traseira</h3>
                     <p class="descricao-produto">Buchas de garfo traseiro</p>
@@ -35,7 +39,6 @@
                     <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Buchas Traseira')">Pedir no WhatsApp</a>
                 </div>
                 <div class="produto categoria-cg 150">
-                    <p class="preco-produto">R$126,90</p>
                     <img src="src/assets/peças/biela-cg150.jpg" alt="Biela CG150" width="100%">
                     <h3>Biela CG 150</h3>
                     <p class="descricao-produto">Biela completa TXK CG150</p>
@@ -43,7 +46,6 @@
                     <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Biela CG 150')">Pedir no WhatsApp</a>
                 </div>
                 <div class="produto categoria-cg 150">
-                    <p class="preco-produto">R$164,90</p>
                     <img src="src/assets/peças/cilindro-cg150.webp" alt="Cilindro CG150" width="100%">
                     <h3>Cilindro CG 150</h3>
                     <p class="descricao-produto">Cilindro de motor para CG 150</p>
@@ -51,7 +53,6 @@
                     <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Cilindro CG 150')">Pedir no WhatsApp</a>
                 </div>
                 <div class="produto categoria-pop 100 categoria-cg 125 98 categoria-biz">
-                    <p class="preco-produto">R$17,00</p>
                     <img src="src/assets/peças/bucha-pop.jpg" alt="Bucha para pop 100">
                     <h3>Bucha Pop</h3>
                     <p class="descricao-produto">Bucha de garfo para pop 100, CG125 etc..</p>
@@ -59,7 +60,6 @@
                     <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Bucha pop 100')">Pedir no WhatsApp</a>
                 </div>
                 <div class="produto categoria-titan categoria-start categoria-cg categoria-fan">
-                    <p class="preco-produto">R$35,00</p>
                     <img src="src/assets/peças/camara.jpg" alt="camara de ar para roda 18">
                     <h3>Câmara de ar</h3>
                     <p class="descricao-produto">câmara de ar para roda 18 polegadas</p>
@@ -67,7 +67,6 @@
                     <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('câmara de ar')">Pedir no WhatsApp</a>
                 </div>
                 <div class="produto categoria-cg 160 categoria-xre 190 categoria-bros 160">
-                    <p class="preco-produto">R$62,00</p>
                     <img src="src/assets/peças/comando.jpg" alt="Arvore comando ww3">
                     <h3>Arvore comando</h3>
                     <p class="descricao-produto">comando para BROS 160 / CG 160 / XRE 190</p>
@@ -75,7 +74,6 @@
                     <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Comando WW3')">Pedir no WhatsApp</a>
                 </div>
                 <div class="produto categoria-cg 150">
-                    <p class="preco-produto">R$65,00</p>
                     <img src="src/assets/peças/kit_transmissao.jpg" alt="Kit transmissão">
                     <h3>Kit transmissão</h3>
                     <p class="descricao-produto">Kit com pinhão, coroa e corrente</p>
@@ -83,7 +81,6 @@
                     <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Kit transmissão CG 150')">Pedir no WhatsApp</a>
                 </div>
                 <div class="produto categoria-lub">
-                    <p class="preco-produto">R$15,00</p>
                     <img src="src/assets/peças/lubrificante_corrente.jpg" alt="Lubrificante de corrente">
                     <h3>Lubrificante de corrente</h3>
                     <p class="descricao-produto">Lubrificante de correntes - TecPro</p>
@@ -91,7 +88,6 @@
                     <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Lubrificante de corrente')">Pedir no WhatsApp</a>
                 </div>
                 <div class="produto categoria-fazer 150 250 categoria-cg 150 160 categoria-xre 190 categoria-cb 300">
-                    <p class="preco-produto">R$150,00</p>
                     <img src="src/assets/peças/pneu_kenda.webp" alt="Pneu kenda">
                     <h3>Pneu traseiro Kenda</h3>
                     <p class="descricao-produto">Pneu traseiro para motos com aro 18</p>
@@ -124,6 +120,14 @@
             let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
             window.open(url, '_blank');
         }
+    </script>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navList = document.getElementById('nav-list');
+    
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('show');
+        });
     </script>
 </body>
 </html>
