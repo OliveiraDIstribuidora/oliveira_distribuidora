@@ -59,7 +59,17 @@
       "imagem": "https://http2.mlstatic.com/D_NQ_NP_643970-MLB69907516842_062023-O-patins-de-freio-lona-025-cg-titan-125-150-160-diafrag.webp",
       "categorias": [
         "titan 125",
-        "CG 150"
+        "cg 150"
+      ]
+    },
+    {
+      "nome": "Kit Trasmissão com retentor",
+      "descricao": "Kit Trasmissão para CG 160 com retentor",
+      "imagem": "https://a-static.mlcdn.com.br/1500x1500/kit-transmissao-relacao-com-retentor-coroa-pinhao-corrente-darom-cg-160-2015-em-diante/offrush-sc/laq1105141/46cafa577005a1cf9f852331eca37602.jpeg",
+      "categorias": [
+        "cg 160",
+        "titan 160",
+        "start 160"
       ]
     }
 ]
