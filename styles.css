@@ -355,6 +355,7 @@ nav ul li a:hover {
     max-width: 200px;
     max-height: 150px;
     margin: 0 auto;
+    object-fit: contain;
 }
 
 .produto p:nth-child(1) {
