@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerador de Produtos</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+      background: #f5f5f5;
+    }
+    label {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      background: #840085;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    pre {
+      background: #222;
+      color: #0f0;
+      padding: 1rem;
+      white-space: pre-wrap;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Gerador de Produto (JSON)</h1>
+
+  <label>
+    Nome do Produto:
+    <input type="text" id="nome" />
+  </label>
+
+  <label>
+    Descrição:
+    <textarea id="descricao"></textarea>
+  </label>
+
+  <label>
+    Caminho da Imagem (URL ou local):
+    <input type="text" id="imagem" />
+  </label>
+
+  <label>
+    Categorias (separadas por vírgula):
+    <input type="text" id="categorias" />
+  </label>
+
+  <button onclick="gerarProduto()">Gerar Produto</button>
+
+  <pre id="saida"></pre>
+
+  <script>
+    function gerarProduto() {
+      const nome = document.getElementById("nome").value;
+      const descricao = document.getElementById("descricao").value;
+      const imagem = document.getElementById("imagem").value;
+      const categorias = document.getElementById("categorias").value
+        .split(",")
+        .map(cat => cat.trim());
+
+      const produto = {
+        nome,
+        descricao,
+        imagem,
+        categorias
+      };
+
+      document.getElementById("saida").textContent = JSON.stringify(produto, null, 2);
+    }
+  </script>
+
+</body>
+</html>

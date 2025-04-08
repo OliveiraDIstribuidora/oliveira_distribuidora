@@ -30,72 +30,8 @@
     <main>
         <section class="container">
             <h2>Nossos Produtos</h2>
-            <div class="produtos-container">
-                <div class="produto categoria-titan 125 categoria-titan 150 categoria-titan 160 categoria-cargo 125 categoria-today categoria-cbx 200s">
-                    <img src="src/assets/peças/bucha.jpg" alt="Bucha Traseira" width="100%">
-                    <h3>Buchas Traseira</h3>
-                    <p class="descricao-produto">Buchas de garfo traseiro</p>
-                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
-                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Buchas Traseira')">Pedir no WhatsApp</a>
-                </div>
-                <div class="produto categoria-cg 150">
-                    <img src="src/assets/peças/biela-cg150.jpg" alt="Biela CG150" width="100%">
-                    <h3>Biela CG 150</h3>
-                    <p class="descricao-produto">Biela completa TXK CG150</p>
-                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
-                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Biela CG 150')">Pedir no WhatsApp</a>
-                </div>
-                <div class="produto categoria-cg 150">
-                    <img src="src/assets/peças/cilindro-cg150.webp" alt="Cilindro CG150" width="100%">
-                    <h3>Cilindro CG 150</h3>
-                    <p class="descricao-produto">Cilindro de motor para CG 150</p>
-                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
-                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Cilindro CG 150')">Pedir no WhatsApp</a>
-                </div>
-                <div class="produto categoria-pop 100 categoria-cg 125 98 categoria-biz">
-                    <img src="src/assets/peças/bucha-pop.jpg" alt="Bucha para pop 100">
-                    <h3>Bucha Pop</h3>
-                    <p class="descricao-produto">Bucha de garfo para pop 100, CG125 etc..</p>
-                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
-                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Bucha pop 100')">Pedir no WhatsApp</a>
-                </div>
-                <div class="produto categoria-titan categoria-start categoria-cg categoria-fan">
-                    <img src="src/assets/peças/camara.jpg" alt="camara de ar para roda 18">
-                    <h3>Câmara de ar</h3>
-                    <p class="descricao-produto">câmara de ar para roda 18 polegadas</p>
-                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
-                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('câmara de ar')">Pedir no WhatsApp</a>
-                </div>
-                <div class="produto categoria-cg 160 categoria-xre 190 categoria-bros 160">
-                    <img src="src/assets/peças/comando.jpg" alt="Arvore comando ww3">
-                    <h3>Arvore comando</h3>
-                    <p class="descricao-produto">comando para BROS 160 / CG 160 / XRE 190</p>
-                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
-                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Comando WW3')">Pedir no WhatsApp</a>
-                </div>
-                <div class="produto categoria-cg 150">
-                    <img src="src/assets/peças/kit_transmissao.jpg" alt="Kit transmissão">
-                    <h3>Kit transmissão</h3>
-                    <p class="descricao-produto">Kit com pinhão, coroa e corrente</p>
-                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
-                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Kit transmissão CG 150')">Pedir no WhatsApp</a>
-                </div>
-                <div class="produto categoria-lub">
-                    <img src="src/assets/peças/lubrificante_corrente.jpg" alt="Lubrificante de corrente">
-                    <h3>Lubrificante de corrente</h3>
-                    <p class="descricao-produto">Lubrificante de correntes - TecPro</p>
-                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
-                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Lubrificante de corrente')">Pedir no WhatsApp</a>
-                </div>
-                <div class="produto categoria-fazer 150 250 categoria-cg 150 160 categoria-xre 190 categoria-cb 300">
-                    <img src="src/assets/peças/pneu_kenda.webp" alt="Pneu kenda">
-                    <h3>Pneu traseiro Kenda</h3>
-                    <p class="descricao-produto">Pneu traseiro para motos com aro 18</p>
-                    <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
-                    <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('Pneu traseiro Kenda')">Pedir no WhatsApp</a>
-                </div>
+            <div class="produtos-container" id="produtos-container">
             </div>
-            
         </section>
     </main>
     
@@ -129,5 +65,29 @@
             navList.classList.toggle('show');
         });
     </script>
+    <script>
+        async function carregarProdutos() {
+          const response = await fetch('src/products/produtos.json');
+          const produtos = await response.json();
+          const container = document.getElementById('produtos-container');
+        
+          produtos.forEach(produto => {
+            const categorias = produto.categorias.map(c => `categoria-${c.replace(/\s+/g, '-')}`).join(' ');
+        
+            const card = document.createElement('div');
+            card.className = `produto ${categorias}`;
+            card.innerHTML = `
+              <img src="${produto.imagem}" alt="${produto.nome}" width="100%">
+              <h3>${produto.nome}</h3>
+              <p class="descricao-produto">${produto.descricao}</p>
+              <img src="src/assets/logo-melhorada.png" alt="" class="logo-card">
+              <a href="#" class="botao-whatsapp" onclick="enviarWhatsApp('${produto.nome}')">Pedir no WhatsApp</a>
+            `;
+            container.appendChild(card);
+          });
+        }
+        
+        carregarProdutos();
+        </script>
 </body>
 </html>
