@@ -9,8 +9,9 @@ export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
   useEffect(() => {
     getProdutos()
       .then((res) => {
-        console.log('Produtos recebidos:', res);
-        setProdutos(res);
+        const produtosLimitados = res.slice(0, 5);
+        console.log('Produtos recebidos:', produtosLimitados);
+        setProdutos(produtosLimitados);
       })
       .catch((err) => {
         console.error('Erro ao buscar produtos:', err);

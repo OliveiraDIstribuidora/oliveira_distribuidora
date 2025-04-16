@@ -9,8 +9,8 @@ export function Header() {
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <img
-          src="src/assets/logo-sem_fundo.png"
-          alt="TaLimpo Logo"
+          src="https://github.com/OliveiraDIstribuidora/oliveira_distribuidora/blob/main/src/assets/logo-sem_fundo.png?raw=true"
+          alt="Oliveira Distribuidora Logo"
           className="w-[200px]"
         />
 
