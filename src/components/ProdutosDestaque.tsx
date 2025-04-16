@@ -30,7 +30,7 @@ export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
             <p className="text-center col-span-full">Nenhum produto disponível no momento.</p>
           ) : (
             produtos.map((p) => (
-              <div key={p.id} className="m-3 bg-white shadow-md rounded-2xl p-4 hover:scale-105 transition-all flex flex-col w-[90%] md:w-[250px] justify-around">
+              <div key={p.id} className="m-3 bg-white shadow-md rounded-2xl p-4 hover:scale-105 transition-all flex flex-col w-[90%] md:w-[90%] justify-around">
                 <img src={p.image} alt={p.name} className="w-full h-40 object-contain rounded-xl mb-2" />
                 <h2 className="flex text-xl font-bold text-[#005c99] justify-center">{p.name}</h2>
                 <p className='text-sm text-gray-600 mb-3 hidden'>{p.description}</p>

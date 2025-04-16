@@ -41,7 +41,7 @@ export function CarrinhoFlutuante() {
               ))}
             </ul>
             <a
-              href={`https://wa.me/55985996728327?text=${mensagem}`}
+              href={`https://wa.me/5585996728327?text=${mensagem}`}
               className="block mt-4 bg-green-600 text-white py-2 text-center rounded"
               target="_blank"
             >
