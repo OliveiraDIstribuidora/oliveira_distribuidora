@@ -5,14 +5,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { CarrinhoProvider } from './context/CarrinhoContext';
 import App from './App';
 import './index.css';
+import { AuthProvider } from './context/AuthContext';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-  <BrowserRouter>
-    <CarrinhoProvider>
-      <App />
-    </CarrinhoProvider>
-  </BrowserRouter>
-</React.StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <CarrinhoProvider>
+          <App />
+        </CarrinhoProvider>
+      </AuthProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 
 );

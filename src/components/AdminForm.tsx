@@ -1,28 +1,45 @@
-import { useState } from 'react';
-import { adicionarProduto } from '../services/productService';
+import { useEffect, useState } from 'react';
+import { adicionarProduto, editarProduto } from '../services/productService';
+import { useAuth } from '../context/AuthContext';
 
-export function AdminForm() {
+export function AdminForm({
+  produtoSelecionado,
+  onSucesso,
+}: {
+  produtoSelecionado: any | null;
+  onSucesso: () => void;
+}) {
+  const { user } = useAuth();
   const [form, setForm] = useState({ name: '', description: '', image: '' });
-  const [loading, setLoading] = useState(false);
-  const [msg, setMsg] = useState('');
+
+  useEffect(() => {
+    if (produtoSelecionado) {
+      setForm({
+        name: produtoSelecionado.name || '',
+        description: produtoSelecionado.description || '',
+        image: produtoSelecionado.image || '',
+      });
+    } else {
+      setForm({ name: '', description: '', image: '' });
+    }
+  }, [produtoSelecionado]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setLoading(true);
-    try {
-      await adicionarProduto(form);
-      setMsg('Produto adicionado com sucesso!');
-      setForm({ name: '', description: '', image: '' });
-    } catch (err) {
-      setMsg('Erro ao adicionar produto.');
-    } finally {
-      setLoading(false);
+
+    if (produtoSelecionado) {
+      await editarProduto(produtoSelecionado.id, form);
+    } else {
+      await adicionarProduto({ ...form, user_id: user.id });
     }
+
+    setForm({ name: '', description: '', image: '' });
+    onSucesso();
   }
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 space-y-4">
-      <h2 className="text-xl font-bold">Painel Admin - Adicionar Produto</h2>
+    <form onSubmit={handleSubmit} className="bg-white p-4 shadow rounded space-y-4">
+      <h2 className="text-lg font-bold">{produtoSelecionado ? 'Editar Produto' : 'Adicionar Produto'}</h2>
       <input
         type="text"
         placeholder="Nome"
@@ -39,19 +56,14 @@ export function AdminForm() {
       />
       <input
         type="text"
-        placeholder="URL da Imagem"
+        placeholder="URL da imagem"
         value={form.image}
         onChange={(e) => setForm({ ...form, image: e.target.value })}
         className="border p-2 w-full"
       />
-      <button
-        type="submit"
-        className="bg-[#d70005] text-white px-4 py-2 rounded"
-        disabled={loading}
-      >
-        {loading ? 'Salvando...' : 'Adicionar Produto'}
+      <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded">
+        {produtoSelecionado ? 'Salvar Alterações' : 'Adicionar Produto'}
       </button>
-      {msg && <p className="text-sm text-green-600">{msg}</p>}
     </form>
   );
 }

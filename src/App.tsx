@@ -6,6 +6,7 @@ import { CarrinhoFlutuante } from './components/CarrinhoFlutuante';
 import { Header } from './components/Header';
 import Footer from './components/Footer';
 import Contato from './components/Contato';
+import { LoginPage } from './pages/LoginPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/produtos" element={<TodosProdutos />} />
         <Route path='/contato' element={<Contato />} />

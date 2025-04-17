@@ -1,41 +1,47 @@
-// src/pages/Admin.tsx
-import { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AdminForm } from '../components/AdminForm';
+import { AdminTable } from '../components/AdminTable';
 
 export function Admin() {
-  const [autenticado, setAutenticado] = useState(false);
-  const [senha, setSenha] = useState('');
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const [produtoEditando, setProdutoEditando] = useState<any | null>(null);
+  const [refetch, setRefetch] = useState(false);
 
-  const senhaCorreta = 'admin123';
+  useEffect(() => {
+    if (!user) navigate('/login');
+  }, [user]);
 
-  function handleLogin(e: React.FormEvent) {
-    e.preventDefault();
-    if (senha === senhaCorreta) {
-      setAutenticado(true);
-    } else {
-      alert('Senha incorreta');
-    }
-  }
+  if (!user) return null;
 
-  if (!autenticado) {
-    return (
-      <div className="p-4">
-        <h2 className="text-xl font-bold mb-2">Área Restrita</h2>
-        <form onSubmit={handleLogin}>
-          <input
-            type="password"
-            placeholder="Senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            className="border p-2 mr-2"
-          />
-          <button type="submit" className="bg-[#d70005] text-white px-4 py-2 rounded">
-            Entrar
-          </button>
-        </form>
+  return (
+    <div className="p-4 max-w-4xl mx-auto">
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-bold">Painel Admin</h1>
+        <button
+          onClick={() => {
+            localStorage.removeItem('supabase.auth.token');
+            window.location.href = '/login';
+          }}
+          className="text-red-500 text-sm"
+        >
+          Sair
+        </button>
       </div>
-    );
-  }
 
-  return <AdminForm />;
+      <AdminForm
+        produtoSelecionado={produtoEditando}
+        onSucesso={() => {
+          setProdutoEditando(null);
+          setRefetch(!refetch); // forçar reload
+        }}
+      />
+      <AdminTable
+        onEditar={setProdutoEditando}
+        key={refetch ? '1' : '0'} // força recarregar dados
+      />
+    </div>
+  );
 }

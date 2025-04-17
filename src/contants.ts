@@ -1,0 +1,1 @@
+export const ADMIN_TOKEN = 'talimpo_supersecreto_2024';

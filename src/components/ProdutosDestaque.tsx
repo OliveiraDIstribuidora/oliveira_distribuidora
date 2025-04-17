@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getProdutos } from '../services/productService';
+import { getProdutos } from '../services/productService'; // ✅ Corrigido aqui
 import { ShoppingCart } from 'lucide-react';
 
 export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
@@ -49,7 +49,6 @@ export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
             </div>
           )}
         </div>
-
       </section>
     </div>
   );
