@@ -19,7 +19,7 @@
 
 @layer utilities {
   .animate-slide {
-    animation: slide 20s linear infinite;
+    animation: slide 35s linear infinite;
   }
 
   @keyframes slide {

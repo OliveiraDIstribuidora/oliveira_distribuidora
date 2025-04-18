@@ -5,9 +5,10 @@ export default function Contato() {
             <h2 className="text-2xl font-bold text-[#d70005] mb-6 text-center">Fale com a gente</h2>
             
             <form
-              action="https://formsubmit.co/talimpo.conjuntoesperanca@gmail.com" // Substitua pelo seu email
+              action="https://formsubmit.co/motosnet.adm@gmail.com" // Substitua pelo seu email
               method="POST"
               className="space-y-4"
+              target="_blank"
             >
               {/* Nome */}
               <div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getProdutos } from '../services/productService'; // ✅ Corrigido aqui
+import { getProdutos } from '../services/productService';
 import { ShoppingCart } from 'lucide-react';
 
 export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
@@ -10,7 +10,6 @@ export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
     getProdutos()
       .then((res) => {
         const produtosLimitados = res.slice(0, 5);
-        console.log('Produtos recebidos:', produtosLimitados);
         setProdutos(produtosLimitados);
       })
       .catch((err) => {
@@ -19,37 +18,73 @@ export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
   }, []);
 
   return (
-    <div className=''>
-      <section className="max-w- md:w-[90%] justify-between mx-auto px-1">
-        <div className="mx-auto py-8 px-1 flex justify-between text-center">
-          <h2 className="text-2xl font-bold text-[#d70005]">Produtos em Destaque</h2>
-          <button className="text-[#005c99] text-xl"><a href="/produtos">Ver todos</a></button>
-        </div>
-        <div className='mx-auto py-8 px-1 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 justify-between text-center'>
-          {produtos.length === 0 ? (
-            <p className="text-center col-span-full">Nenhum produto disponível no momento.</p>
-          ) : (
-            produtos.map((p) => (
-              <div key={p.id} className="m-3 bg-white shadow-md rounded-2xl p-4 hover:scale-105 transition-all flex flex-col w-[90%] md:w-[90%] justify-around">
-                <img src={p.image} alt={p.name} className="w-full h-40 object-contain rounded-xl mb-2" />
-                <h2 className="flex text-xl font-bold text-[#161617] justify-center">{p.name}</h2>
-                <p className='text-sm text-gray-600 mb-3 hidden'>{p.description}</p>
-                <button onClick={() => onAdd(p)} className="flex bg-green-500 text-white px-2 py-1 my-3 mr-2 gap-3 justify-center rounded-md hover:bg-green-700"><ShoppingCart />Adicionar</button>
-                <button onClick={() => setSelected(p)} className="underline">Ver Detalhes</button>
-              </div>
-            )))}
-          {selected && (
-            <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-              <div className="bg-white rounded-2xl max-w-md w-full p-6 relative justify-center flex-col text-center">
-                <img src={selected.image} alt={selected.name} className="w-full h-40 object-contain rounded-xl mb-2" />
-                <h2 className="text-2xl font-bold mt-4 text-[#161617]">{selected.name}</h2>
-                <p className="text-gray-700 my-4 block">{selected.description}</p>
-                <button onClick={() => setSelected(null)} className="mt-4 bg-[#d70005] text-white px-4 py-2 rounded-md hover:bg-[#9a1a1c] transition w-full">Fechar</button>
-              </div>
+    <section className="max-w-7xl w-full mx-auto px-4 py-10">
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-3xl font-bold text-[#d70005]">Produtos em Destaque</h2>
+        <a
+          href="/produtos"
+          className="text-blue-700 hover:text-blue-900 text-base font-medium transition"
+        >
+          Ver todos
+        </a>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {produtos.length === 0 ? (
+          <p className="col-span-full text-center text-gray-500">
+            Nenhum produto disponível no momento.
+          </p>
+        ) : (
+          produtos.map((p) => (
+            <div
+              key={p.id}
+              className="bg-white shadow-md hover:shadow-xl rounded-2xl p-4 transition-transform hover:scale-105 flex flex-col items-center text-center border-t-4 border-[#d70005]"
+            >
+              <img
+                src={p.image}
+                alt={p.name}
+                className="w-full h-40 object-contain rounded-xl mb-3"
+              />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">{p.name}</h3>
+              <p className="text-sm text-gray-600 mb-3 hidden">{p.description}</p>
+              <button
+                onClick={() => onAdd(p)}
+                className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition w-full mb-2"
+              >
+                <ShoppingCart size={18} />
+                Adicionar
+              </button>
+              <button
+                onClick={() => setSelected(p)}
+                className="text-sm underline text-gray-700 hover:text-[#d70005] transition"
+              >
+                Ver Detalhes
+              </button>
             </div>
-          )}
+          ))
+        )}
+      </div>
+
+      {/* Modal */}
+      {selected && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+          <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-lg text-center relative">
+            <img
+              src={selected.image}
+              alt={selected.name}
+              className="w-full h-40 object-contain rounded-xl mb-4"
+            />
+            <h3 className="text-2xl font-bold text-[#161617] mb-2">{selected.name}</h3>
+            <p className="text-gray-700 mb-6">{selected.description}</p>
+            <button
+              onClick={() => setSelected(null)}
+              className="bg-[#d70005] hover:bg-[#9a1a1c] text-white px-4 py-2 rounded-md w-full transition"
+            >
+              Fechar
+            </button>
+          </div>
         </div>
-      </section>
-    </div>
+      )}
+    </section>
   );
 }
