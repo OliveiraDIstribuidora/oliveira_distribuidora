@@ -9,7 +9,7 @@ export function ValoresEndereco() {
           e que cada cliente merece o melhor atendimento possível. Por isso, nossos valores são o que nos guiam todos os dias:
         </p>
 
-        <div className="w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center md:text-left text-gray-700">
+        <div className="w-[80%] md:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center md:text-left text-gray-700">
           {[
             {
               titulo: 'Comprometimento com o Cliente',
