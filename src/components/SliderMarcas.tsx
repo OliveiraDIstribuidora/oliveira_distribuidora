@@ -28,7 +28,7 @@ export function SliderMarcas() {
     <section className="bg-white overflow-hidden py-8">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold text-[#d70005] mt-8">Trabalhamos com as Melhores Marcas do Mercado</h2>
-        <p className="text-gray-500 text-xl">Na Oliveira <span className="text-[#d70005]">Distribuidora</span>, oferecemos peças e acessórios de moto das marcas mais renomadas,
+        <p className="text-gray-500 max-w-[90%] mx-auto text-xl">Na Oliveira <span className="text-[#d70005]">Distribuidora</span>, oferecemos peças e acessórios de moto das marcas mais renomadas,
         garantindo qualidade, durabilidade e performance para sua motocicleta.</p>
       </div>
    

@@ -19,14 +19,8 @@ export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
 
   return (
     <section className="max-w-7xl w-full mx-auto px-4 py-10">
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-center mb-8">
         <h2 className="text-3xl font-bold text-[#d70005]">Produtos em Destaque</h2>
-        <a
-          href="/produtos"
-          className="text-blue-700 hover:text-blue-900 text-base font-medium transition"
-        >
-          Ver todos
-        </a>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -38,7 +32,7 @@ export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
           produtos.map((p) => (
             <div
               key={p.id}
-              className="bg-white shadow-md hover:shadow-xl rounded-2xl p-4 transition-transform hover:scale-105 flex flex-col items-center text-center border-t-4 border-[#d70005]"
+              className="w-[90%] mx-auto bg-white shadow-md hover:shadow-xl rounded-2xl p-4 transition-transform hover:scale-105 flex flex-col items-center text-center border-t-4 border-[#d70005]"
             >
               <img
                 src={p.image}
@@ -63,6 +57,14 @@ export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
             </div>
           ))
         )}
+      </div>
+      <div className='flex justify-center mt-8'>
+        <a
+          href="/produtos"
+          className="text-white bg-[#d70005] p-4 px-8 rounded-xl hover:bg-[#9b1a1d] hover:scale-105 text-base font-medium transition"
+        >
+          Ver todos
+        </a>
       </div>
 
       {/* Modal */}
