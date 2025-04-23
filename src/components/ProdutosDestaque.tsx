@@ -59,7 +59,7 @@ export function ProdutosDestaque({ onAdd }: { onAdd: (produto: any) => void }) {
                 <div className="space-y-2 mt-auto">
                   <button
                     onClick={() => onAdd(p)}
-                    className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition w-full"
+                    className="flex items-center justify-center gap-2 bg-[#d70005] hover:bg-[#d700048e] text-white px-4 py-2 rounded-md transition w-full"
                   >
                     <ShoppingCart size={18} /> Adicionar
                   </button>
