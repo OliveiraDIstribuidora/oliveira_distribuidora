@@ -35,7 +35,7 @@ export function TodosProdutos() {
               <div className="flex gap-2 m-4">
                 <button
                   onClick={() => adicionar(p)}
-                  className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition"
+                  className="bg-[#d70005] hover:bg-[#8b292b] text-white px-4 py-2 rounded-lg transition"
                 >
                   Adicionar
                 </button>
