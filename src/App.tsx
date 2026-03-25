@@ -14,14 +14,16 @@ function App() {
       {/* Carrinho visível em todas as rotas */}
       <CarrinhoFlutuante />
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/produtos" element={<TodosProdutos />} />
-        <Route path='/contato' element={<Contato />} />
-      </Routes>
-      <Footer />
+      <div className="pt-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/produtos" element={<TodosProdutos />} />
+          <Route path='/contato' element={<Contato />} />
+        </Routes>
+        <Footer />
+      </div>
     </>
   );
 }
